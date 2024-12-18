@@ -23,7 +23,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-option(QT6_BUILD "configure build to use Qt6/KF6" ON)
+option(QT6_BUILD "configure build to use Qt6/KF6" OFF)
 
 if(QT6_BUILD)
     set(QT_MAJOR_VERSION 6)
@@ -66,4 +66,6 @@ add_subdirectory(3rdparty/googletest)
 add_subdirectory(src)
 
 add_subdirectory(tests)
+
+# include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 

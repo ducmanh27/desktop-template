@@ -10,6 +10,10 @@ target_link_libraries(
     spdlog::spdlog $<$<BOOL:${MINGW}>:ws2_32>
 )
 
+if(SPDLOG_BUILD_EXAMPLE_HO)
+    add_executable(example_header_only example.cpp)
+    target_link_libraries(example_header_only PRIVATE spdlog::spdlog_header_only)
+endif()
 
 include(GNUInstallDirs)
 install(TARGETS console-sample
